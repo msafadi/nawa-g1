@@ -3,27 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Mohammed Safadi</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        p {
+            color: red;
+        }
+    </style>
+    
 </head>
 <body>
     
     <header>
-        <img src="images/user-image.png" height="90">
-        <h1>Mohammed Safadi</h1>
-        <h3>Full-stack Web Developer</h3>
+        <img class="avatar" src="images/avatar.jpeg">
+        <h1 id="logo" style="color: blue; background-color: grey;">
+            Mohammed Safadi <small>(Pro)</small>
+        </h1>
+        <div></div>
+        <h3 id="sub-title">Full-stack Web Developer</h3>
     </header>
+    
     <hr>
     <!-- Bio section -->
-    <section>
+    <section class="box v-space">
         <h4>Bio</h4>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            Tenetur et obcaecati, tempora ad quos rerum maiores! 
-            Repudiandae, eveniet facere et doloremque suscipit temporibus excepturi ab praesentium 
-            beatae voluptates error eaque.</p>
+        <div>
+            <p style="color: green"><span>Lorem</span> ipsum dolor sit amet consectetur adipisicing elit. 
+                Tenetur et obcaecati, tempora ad quos rerum maiores! 
+                Repudiandae, eveniet facere et doloremque suscipit temporibus excepturi ab praesentium 
+                beatae voluptates error eaque.</p>
+
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Tenetur et obcaecati, tempora ad quos rerum maiores! 
+                Repudiandae, eveniet facere et doloremque suscipit temporibus excepturi ab praesentium 
+                beatae voluptates error eaque.</p>
+        </div>
     </section>
     <!-- end of Bio section -->
-    <section>
+    <section class="box v-space">
         <h4>Languages</h4>
         <ul type="square">
             <li>Arabic</li>
@@ -68,6 +86,14 @@
                 </tr>
             </tfoot>
         </table>
+    </section>
+
+    <section class="box v-space">
+        <h4>Soical Links</h4>
+        <ul>
+            <li><a href="https://twitter.com">Twitter</a></li>
+            <li><a href="https://linkedin.com">Linked-in</a></li>
+        </ul>
     </section>
 </body>
 </html>
