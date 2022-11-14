@@ -40,4 +40,74 @@ a {
     text-transform: uppercase;
 }
 
+#hero-section {
+    height: 100vh;
+    background-image: url(../images/hero-bg40.jpg);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    position: relative;
+    /* background-size: cover; */
+}
+
+.overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.block-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.hero-box {
+    position: relative;
+}
+
+.hero-box .price {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: #ffd800;
+    position: absolute;
+    top: -50px;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.hero-box .price span {
+    text-align: center;
+    color: #000;
+    font-size: 0.65rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.hero-box .price span.n {
+    font-size: 1.6rem;
+}
+
+.hero-box h1 {
+    text-align: center;
+    color: #fff;
+}
+.hero-box h1 .first {
+    font-size: 3.5rem;
+    font-weight: normal;
+    display: block;
+}
+.hero-box h1 .last {
+    font-size: 7rem;
+    display: block;
+    margin-top: -30px;
+    text-shadow: 7px 7px 5px #666;
+}
+
 
