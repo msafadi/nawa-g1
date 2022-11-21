@@ -1,0 +1,53 @@
+
+header .navbar .nav-link, header .navbar .nav-link.active {
+    color: #fff;
+}
+header .navbar .nav-item {
+    margin-right: 1.5rem;
+}
+
+.v-sep {
+    position: relative;
+    padding: 0 1.5rem;
+}
+.v-sep::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    height: 16px;
+    margin-top: -8px;
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.v-sep:last-child {
+    padding-right: 0;
+}
+
+#hero, #hero .carousel-item {
+    height: 100vh;
+    overflow: hidden;
+}
+#hero .carousel-item img {
+    object-fit: cover;
+    height: 100%;
+}
+#hero .carousel-caption {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+#hero .carousel-indicators [data-bs-target] {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+#hero .carousel-item {
+    cursor:w-resize;
+}
