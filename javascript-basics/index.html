@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Basics</title>
+</head>
+<body>
+    <h1>JavaScript</h1>
+
+    <script src="script.js">
+        // Code here is not allowed
+    </script>
+    <script>
+        // JS code..
+        let name = 'Mohammed';
+        let Name = 'Ahmed'; // Variable's name is case-senesitive
+        let city = 'Gaza';
+
+        let cities = ['Gaza', 'Der-Balah', 'Rafah', [2022, 2023]];
+        cities[cities.length] = 'Khan younis';
+        cities.push('South'); // Add item to end of the array
+        cities.pop(); // Remove last item in the array and return it
+        city = cities.pop();
+
+        cities.unshift('Cairo'); // Add item to the begining of the array
+        city = cities.shift(); // Remove first item from the array
+
+        cities.splice(1, 1); // Remove item from offset 1
+        cities.splice(1, 1, 'Test'); // Replace item in offset 1 with "Test"
+
+        console.log(cities);
+
+        alert(cities.length); // cities.length : size of the array
+        
+
+        //hello('Nawa');
+
+        if (city == 'Gaza') {
+            let name = 'Ahmed';
+        }
+
+        //alert('Hello ' + name);
+        change();
+        //alert('Hello ' + name);
+    </script>
+</body>
+</html>
