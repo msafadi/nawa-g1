@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <select name="" id="country">
+            <option value="">Select Country</option>
+            <option value="ps">Palestine</option>
+            <option value="sa">Saudi Arabia</option>
+            <option value="om">Oman</option>
+        </select>
+        <select name="" id="city">
+            <option value="">City</option>
+        </select>
+    </form>
+
+    <script>
+        const country = document.querySelector('#country');
+        const city = document.querySelector('#city');
+
+        /*
+        res => res.json()
+        function (res) {
+            return res.json()
+        }
+        */
+
+        country.addEventListener('change', function() {
+            console.log(this.value);
+            let c = this.value;
+            city.innerHTML = '';
+            city.disabled = "disabled";
+            fetch('data/' + c + '.json')
+                .then(res => res.json())
+                .then(json => {
+                    for (i in json) {
+                        city.innerHTML += `<option value="">
+                            ${json[i]}
+                        </option>`;
+                    }
+                    city.disabled = false;
+                })
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+[
+    {
+        "title": "Learn HTML",
+        "completed": true,
+        "tags": ["html", "web"]
+    },
+    {
+        "title": "Learn CSS",
+        "completed": true,
+        "tags": ["css", "web", "style"]
+    },
+    {
+        "title": "Learn JavaScript",
+        "completed": false,
+        "tags": ["javascripr", "web", "programming"]
+    }
+]
