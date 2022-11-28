@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="d-flex align-items-center justify-content-between py-3 border-bottom mb-4">
+            <h1>My To-do List</h1>
+            <div>
+                <button class="btn btn-dark" id="load-data">Load Data</button>
+                <button class="btn btn-danger">Clear</button>
+            </div>
+        </header>
+        <form action="" class="d-flex mb-4 bg-light p-3 border-rounded">
+            <div class="col-6">
+                <input type="text" placeholder="Task title..." class="form-control">
+            </div>
+            <button type="submit" id="add" class="btn btn-primary ms-2">Add Task</button>
+        </form>
+
+        <ul id="list">
+            <li>Learn CSS - <a href="#" class="text-danger">Delete</a></li>
+            <li>Learn JavaScript - <a href="#" class="text-danger">Delete</a></li>
+        </ul>
+    </div>
+    
+    <script src="js/jquery-3.6.1.min.js"></script>
+    <script>
+        //document.querySelector('#add').style.color = 'red';
+        //document.querySelector('#add').innerHTML = '<b>Add!!!!</b>';
+        // $ = jQuery
+
+        // Call the function when the html document is loaded
+        $('body').ready(function() {
+            $('header h1')
+                .css('text-transform', 'uppercase')
+                .css('font-size', '2rem')
+                .html("To-do's List")
+                .fadeOut(2000)
+                .fadeIn(3000)
+                .addClass('text-primary');
+
+            $('form').on('submit', function(e) {
+                e.preventDefault();
+                let input = $('form input');
+
+                // let content = $('#list').html();
+                // $('#list').html(content + '<li>' + $('form input').val() + '</li>');
+                $('#list').prepend('<li>' + input.val() + '</li>');
+                input.val("");
+            })
+
+            // document.querySelector('header .btn-danger').addEventListener('click', function() {
+            //     document.querySelector('#list').innerHTML = '';
+            // })
+            $('header .btn-danger').on('click', function() {
+                let answer = confirm('Are you sure you want to clear all the data?');
+                if (answer) {
+                    $('#list').empty();
+                }
+            })
+
+            let count = 0;
+            $('#load-data').on('click', function (e) {
+                e.preventDefault();
+                $.ajax({
+                    url: "https://jsonplaceholder.typicode.com/todos",
+                    method: "get"
+                }).done(function(data) {
+                    for (i = count; i < count + 10; i++) {
+                        let item = data[i];
+                        $('#list').append(`<li>${item.title} 
+                            - <a href="#" class="text-danger">Delete</a></li>`);
+                    }
+                    count = i;
+                });
+            });
+            // Event delegation
+            // #list is the parent element exists in the HTML document
+            // .text-danger is the child element that listen to the event (click)
+            $('#list').on('click', '.text-danger', function(e) {
+                e.preventDefault();
+                $(this).parent().remove();
+            });
+        });
+    </script>
+</body>
+</html>
